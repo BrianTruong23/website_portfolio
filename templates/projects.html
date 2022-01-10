@@ -1,0 +1,84 @@
+
+{% extends "base.html" %}
+
+{% block styles %}
+
+<!--    Google font-->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@800&family=Island+Moments&family=Montserrat:ital,wght@0,700;0,900;1,400;1,500&family=The+Nautigal:wght@700&family=Ubuntu:ital,wght@0,400;0,700;1,300&display=swap" rel="stylesheet">
+    <!--    Font Awesme-->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,700">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,700">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,700">
+<!--  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />-->
+
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style_projects.css') }}">
+{% endblock %}
+
+{% block title %}My Top Projects{% endblock %}
+
+{% block content %}
+
+
+
+<section id = "projects">
+    <div class="container">
+
+
+         <h1 class="heading">My Top Projects</h1>
+         <p class="description">These are my all-time favourite memories along the coding journey.</p>
+
+
+      {% for project in projects%}
+
+      <div class="card" >
+        <div class="front" style="background-image: url('{{project.img_url}}');">
+            <p class="large">{{project.big_title}}</p>
+        </div>
+
+        <div class="back">
+          <div>
+            <div class="title">{{project.name}} <span class="release_date">{{project.year}}</span></div>
+              <p class="review">{{project.category}}</p>
+              <div class="rating">
+                  <label>{{project.award}}</label>
+                  <i class="fas fa-star star"></i>
+
+                </div>
+
+                <p class="overview">{{project.description}}</p>
+
+                <a href="{{project.source_url}}" class="button">Source</a>
+                <a href="{{project.demonstration_url}}" class="button delete-button"> Demo</a>
+
+          </div>
+        </div>
+      </div>
+
+      {% endfor %}
+
+
+</div>
+
+
+
+
+
+
+
+
+</section>
+
+
+
+
+{% endblock %}
+
+

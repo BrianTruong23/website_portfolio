@@ -1,0 +1,136 @@
+
+
+.nav-item{
+font-family: 'Montserrat', sans-serif;
+}
+
+.avatar-img{
+width : 80%;
+border-radius : 50%;
+ }
+
+ #main-page{
+ padding : 5%
+ }
+
+.name-tag{
+font-family: 'Be Vietnam Pro', sans-serif;
+font-size : 5rem;
+
+}
+
+.descript{
+margin: 3% auto 6%;
+}
+
+.small-descript{
+margin-bottom: 15%;
+}
+
+.img_center{
+padding-top:5%;
+text-align:center
+}
+
+#Projects{
+
+padding : 3%;
+
+}
+
+.project-showcase{
+background-color: #fcf7f5;
+padding:3%;
+}
+
+.project-case-show-img{
+width: 50%;
+border-radius:20%;
+margin: auto;
+display: block;
+}
+
+.project-decrip{
+margin: 3% auto 10%;
+}
+
+
+#contact{
+padding:3%
+}
+
+
+
+.contact-me{
+text-align:center;
+padding-bottom:3%
+
+}
+
+.contact-form{
+padding:0 10% 3% ;
+
+}
+
+.alert{
+margin: 0 10% 3% ;
+
+}
+
+.fade-out {
+  animation: fadeOut ease 8s;
+  -webkit-animation: fadeOut ease 8s;
+  -moz-animation: fadeOut ease 8s;
+  -o-animation: fadeOut ease 8s;
+  -ms-animation: fadeOut ease 8s;
+}
+@keyframes fadeOut {
+  0% {
+    opacity:1;
+  }
+  100% {
+    opacity:0;
+  }
+}
+
+@-moz-keyframes fadeOut {
+  0% {
+    opacity:1;
+  }
+  100% {
+    opacity:0;
+  }
+}
+
+@-webkit-keyframes fadeOut {
+  0% {
+    opacity:1;
+  }
+  100% {
+    opacity:0;
+  }
+}
+
+@-o-keyframes fadeOut {
+  0% {
+    opacity:1;
+  }
+  100% {
+    opacity:0;
+  }
+}
+
+@-ms-keyframes fadeOut {
+  0% {
+    opacity:1;
+  }
+  100% {
+    opacity:0;
+}
+
+}
+
+footer{
+text-align : center
+
+}

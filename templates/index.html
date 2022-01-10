@@ -1,0 +1,116 @@
+
+
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% extends "base.html" %}
+
+{% block title %} Thang Website {% endblock %}
+
+
+{% block styles %}
+  <!-- Custom styles for this template -->
+
+
+<!-- Latest compiled and minified CSS -->
+<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />-->
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<link href="{{ url_for('static', filename='css/style.css')}}" rel="stylesheet">
+
+<!--    Google font-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@800&family=Island+Moments&family=Montserrat:ital,wght@0,700;0,900;1,400;1,500&family=The+Nautigal:wght@700&family=Ubuntu:ital,wght@0,400;0,700;1,300&display=swap" rel="stylesheet">
+<!--    Font Awesme-->
+<script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
+
+{% endblock %}
+
+
+
+{% block content %}
+
+    <section id = "main-page">
+      <div class="row">
+
+        <div class="col-lg-6" >
+          <h1 class="name-tag"   style="background-image: url('static/images/bg_img_7.png');  background-position: center; background-repeat: no-repeat;" > Thang Truong</h1>
+
+          <h4 class = "descript" >Coder and Ping Pong Lover</h4>
+          <p class = "small-descript">You love solving problem and play ping pong. Then, ...</p>
+            <a href="#contact">
+                <button type="button" class="btn btn-dark btn-lg "> Hit me up!</button>
+            </a>
+
+        </div>
+
+        <div class="col-lg-6">
+          <img src="static/images/cute_pic.jpg" alt="" class = "avatar-img img_center">
+        </div>
+
+      </div>
+
+      </section>
+
+
+    <section id = "Projects">
+      <div class="row project-showcase rounded" >
+
+        <div class="col-lg-6" >
+
+          <img src="static/images/crown_1.png" alt="">
+
+          <h1>Impact In</h1>
+
+          <h5 class = "project-decrip" >Every Project That I Build</h5>
+
+            <a href="{{url_for('project_showcase')}}">
+                <button type="button" class="btn btn-outline-dark" >See all projects</button>
+            </a>
+
+        </div>
+
+        <div class = "col-lg-6">
+          <img src="static/images/impact_1.jpg" alt="" class = "project-case-show-img img_center">
+
+        </div>
+
+      </div>
+
+
+
+
+    </section>
+
+    <section id = "contact">
+       <div class = "contact-me">
+          <h1> Contact Me </h1>
+
+                {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                      {% for message in messages %}
+                           <div class = "alert alert-success fade-out " role="alert">
+                               {{ message }}
+                           </div>
+
+                      {% endfor %}
+                    {% endif %}
+                {% endwith %}
+
+
+
+        </div>
+
+
+
+      <div class = "contact-form">
+          {{ wtf.quick_form(form, novalidate, button_map={"submit": "dark"}) }}
+      </div>
+
+    </section>
+
+
+{% endblock%}
